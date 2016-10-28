@@ -48,7 +48,7 @@ A shared block of code to initialize Embedded Composer from an application.
 //
 // see next two blocks of code
 
-use Dflydev\EmbeddedComposer\Core\EmbeddedComposerBuilder;
+use Yosymfony\EmbeddedComposer\EmbeddedComposerBuilder;
 use Symfony\Component\Console\Input\ArgvInput;
 
 $input = new ArgvInput;
