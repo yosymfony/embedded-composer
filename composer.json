@@ -1,0 +1,37 @@
+{
+    "name": "yosymfony/embedded-composer",
+    "description": "Embed Composer into another application",
+    "keywords": ["embedded", "composer", "extensibility"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dragonfly Development Inc.",
+            "email": "info@dflydev.com",
+            "homepage": "http://dflydev.com"
+        },
+        {
+            "name": "Beau Simensen",
+            "email": "beau@dflydev.com",
+            "homepage": "http://beausimensen.com"
+        },
+        {
+            "name": "Victor Puertas",
+            "email": "vpgugr@gmail.com",
+            "homepage": "http://yosymfony.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5",
+        "composer/composer": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Yosymfony\\EmbeddedComposer\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
