@@ -57,6 +57,7 @@ interface EmbeddedComposerInterface
     /**
      * Create an Installer instance.
      *
+     * @param Composer    $composer
      * @param IOInterface $io
      *
      * @return Installer

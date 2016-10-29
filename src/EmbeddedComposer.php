@@ -13,6 +13,7 @@
 namespace Yosymfony\EmbeddedComposer;
 
 use Composer\Autoload\ClassLoader;
+use Composer\Composer;
 use Composer\Config;
 use Composer\Factory;
 use Composer\Installer;
@@ -161,6 +162,7 @@ class EmbeddedComposer implements EmbeddedComposerInterface
             $installer->setAdditionalInstalledRepository(
                 $this->internalRepository
             );
+
             $pluginManager = $composer->getPluginManager();
 
             foreach ($this->internalRepository->getPackages() as $package) {
