@@ -125,14 +125,17 @@ One can search for any package that Composer has installed by using
 the `findPackage` method:
 
 ```php
-<?php
 $package = $embeddedComposer->findPackage('acme/myapp');
 ```
 
 #### Create a Composer instance
 
 ```php
-// requires creating an IOInterface instance
+use Composer\IO\BufferIO;
+
+// requires creating an IOInterface instance such as  BufferIO
+$io = new BufferIO();
+
 $composer = $embeddedComposer->createComposer($io);
 ```
 
@@ -143,7 +146,10 @@ operations against the external configuration. It will take the internal
 (embedded) configuration into account when solving dependencies.
 
 ```php
-// requires creating an IOInterface instance
+use Composer\IO\BufferIO;
+
+$io = new BufferIO();
+
 $composer = $embeddedComposer->createComposer($io);
 $installer = $embeddedComposer->createInstaller($composer, $io);
 ```
