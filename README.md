@@ -1,6 +1,8 @@
 Embedded Composer
 =================
 
+[![Build Status](https://travis-ci.org/yosymfony/Embedded-composer.svg?branch=master)](https://travis-ci.org/yosymfony/Embedded-composer)
+
 Embed [Composer](https://getcomposer.org/) into another application.
 This library is based on [dflydev-embedded-composer](https://github.com/dflydev/dflydev-embedded-composer).
 Due to this latter seems abandoned, I decided to fork this one and start
@@ -49,11 +51,10 @@ A shared block of code to initialize Embedded Composer from an application.
 // see next two blocks of code
 
 use Yosymfony\EmbeddedComposer\EmbeddedComposerBuilder;
-use Symfony\Component\Console\Input\ArgvInput;
 
 $input = new ArgvInput;
 
-$projectDir = $input->getParameterOption('--project-dir') ?: '.';
+$projectDir = '/my-project-dir'
 
 $embeddedComposerBuilder = new EmbeddedComposerBuilder(
     $classLoader,
@@ -61,8 +62,8 @@ $embeddedComposerBuilder = new EmbeddedComposerBuilder(
 );
 
 $embeddedComposer = $embeddedComposerBuilder
-    ->setComposerFilename('myapp.json')
-    ->setVendorDirectory('.myapp')
+    ->setComposerFilename('composer.json')
+    ->setVendorDirectory('.vendor')
     ->build();
 
 $embeddedComposer->processAdditionalAutoloads();
@@ -70,7 +71,6 @@ $embeddedComposer->processAdditionalAutoloads();
 // application is now ready to be run taking both the embedded
 // dependencies and directory specific dependencies into account.
 ```
-
 
 #### myapp (bin)
 
